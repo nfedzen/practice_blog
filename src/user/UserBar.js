@@ -1,20 +1,17 @@
-import React, {useState} from 'react'
-import Login from './Login'
-import Register from './Register'
-import Logout from './Logout'
+import React, { useState } from "react";
+import Login from "./Login";
+import Register from "./Register";
+import Logout from "./Logout";
 
-
-export default function UserBar({user, setUser}){
-  
-
+export default function UserBar({ user, dispatch }) {
   if (user) {
-    return <Logout user={user} setUser={setUser}/>
+    return <Logout user={user} dispatch={dispatch} />;
   } else {
     return (
       <React.Fragment>
-        <Login setUser={setUser} />
-        <Register setUser={setUser} />
+        <Login dispatch={dispatch} />
+        <Register dispatch={dispatch} />
       </React.Fragment>
-    )
+    );
   }
 }
